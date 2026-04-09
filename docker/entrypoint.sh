@@ -49,6 +49,10 @@ nohup python3 -m vllm.entrypoints.openai.api_server \
     --max-model-len "$MAX_MODEL_LEN" \
     --gpu-memory-utilization "$GPU_MEMORY_UTILIZATION" \
     --trust-remote-code \
+    --enable-reasoning \
+    --reasoning-parser deepseek_r1 \
+    --enable-auto-tool-choice \
+    --tool-call-parser hermes \
     $VLLM_EXTRA_ARGS \
     > "$LOG_DIR/vllm.log" 2>&1 &
 
