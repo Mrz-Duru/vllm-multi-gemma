@@ -55,7 +55,7 @@ echo "Starting vLLM for: $RESOLVED_MODEL"
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)
 LOG_FILE="$LOG_DIR/vllm_${TIMESTAMP}.log"
 
-nohup python -m vllm.entrypoints.openai.api_server \
+nohup python3 -m vllm.entrypoints.openai.api_server \
     --model "$RESOLVED_MODEL" \
     --host 0.0.0.0 \
     --port "$PORT" \

@@ -39,7 +39,7 @@ echo "  GPU memory utilization: $GPU_MEMORY_UTILIZATION"
 echo "  Dtype: $DTYPE"
 echo "  Extra args: $VLLM_EXTRA_ARGS"
 
-nohup python -m vllm.entrypoints.openai.api_server \
+nohup python3 -m vllm.entrypoints.openai.api_server \
     --model "$RESOLVED_MODEL" \
     --host 0.0.0.0 \
     --port "$PORT" \

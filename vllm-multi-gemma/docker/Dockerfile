@@ -6,7 +6,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install utilities
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl jq procps && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    ln -sf $(which python3) /usr/local/bin/python 2>/dev/null || true
 
 # Copy scripts
 COPY scripts/ /opt/vllm-gemma/scripts/
