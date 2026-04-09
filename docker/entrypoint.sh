@@ -24,7 +24,9 @@ fi
 
 # ── Login to HuggingFace ──
 echo "Logging into HuggingFace..."
-huggingface-cli login --token "$HF_TOKEN" 2>/dev/null || true
+# NEW lines:
+export HUGGING_FACE_HUB_TOKEN="$HF_TOKEN"
+hf auth login --token "$HF_TOKEN" 2>/dev/null || huggingface-cli login --token "$HF_TOKEN" 2>/dev/null || true
 
 # ── Resolve model shortcuts ──
 source "$SCRIPTS_DIR/resolve_model.sh"

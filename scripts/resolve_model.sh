@@ -6,7 +6,7 @@ resolve_model() {
 
     case "$input" in
         gemma2-cosmos|gemma2|cosmos)
-            echo "ytu-ce-cosmos/turkish-gemma2-9b-it"
+            echo "ytu-ce-cosmos/Turkish-Gemma-9b-T1"
             ;;
         gemma3-12b|gemma3)
             echo "google/gemma-3-12b-it"
