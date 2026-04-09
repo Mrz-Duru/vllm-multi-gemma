@@ -1,0 +1,34 @@
+{
+  "models": {
+    "gemma2-cosmos": {
+      "hf_repo": "ytu-ce-cosmos/turkish-gemma2-9b-it",
+      "description": "Turkish fine-tuned Gemma 2 9B by YTU COSMOS Lab",
+      "params_b": 9,
+      "vram_fp16_gb": 18,
+      "recommended_max_model_len": 8192,
+      "notes": "Fits comfortably on 32GB GPU in full precision"
+    },
+    "gemma3-12b": {
+      "hf_repo": "google/gemma-3-12b-it",
+      "description": "Google Gemma 3 12B Instruct",
+      "params_b": 12,
+      "vram_fp16_gb": 24,
+      "recommended_max_model_len": 4096,
+      "notes": "Tight on 32GB — use max_model_len=4096 and gpu_memory_utilization=0.92"
+    },
+    "gemma4-12b": {
+      "hf_repo": "google/gemma-4-12b-it",
+      "description": "Google Gemma 4 12B Instruct",
+      "params_b": 12,
+      "vram_fp16_gb": 24,
+      "recommended_max_model_len": 4096,
+      "notes": "Same VRAM profile as Gemma 3 12B. Verify HF repo ID when released."
+    }
+  },
+  "defaults": {
+    "port": 8000,
+    "dtype": "bfloat16",
+    "gpu_memory_utilization": 0.92,
+    "max_model_len": 4096
+  }
+}
